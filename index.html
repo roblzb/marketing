@@ -8,7 +8,7 @@
 :root {
   --rust:#c85a3d; --sage:#1a7a4a; --gold:#9a6f10; --ink:#0d1e2e;
   --page-bg:#ebe5db; --card-bg:#f7f3ee; --border:#d8d0c4;
-  --dim:#6b7280; --red:#b91c1c;
+  --dim:#6b7280; --red:#b91c1c; --muted:#8a9ab0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--page-bg);color:var(--ink);font-size:14px}
@@ -16,47 +16,54 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 header{background:var(--ink);color:#fff;display:flex;align-items:center;gap:12px;padding:14px 20px}
 .hd-badge{background:var(--rust);border-radius:6px;padding:4px 10px;font-weight:800;font-size:13px;letter-spacing:.5px}
 header h1{font-size:16px;font-weight:700;flex:1}
-.hd-right{display:flex;align-items:center;gap:10px;font-size:12px;color:#9ca3af}
-.hd-sync{font-size:11px}
+.hd-right{font-size:11px;color:#9ca3af}
 
 .page{padding:16px 20px;max-width:1200px;margin:0 auto}
 
-/* Period toggle */
+/* Toggle */
 .toggle-row{display:flex;gap:8px;margin-bottom:16px;align-items:center}
 .toggle-label{font-size:12px;color:var(--dim);margin-right:4px}
 .toggle-btn{border:1px solid var(--border);background:var(--card-bg);border-radius:6px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer;color:var(--dim)}
 .toggle-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
 
-/* Hero row */
-.hero-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
-.hero-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:16px;position:relative}
-.hero-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--dim);margin-bottom:6px}
-.hero-val{font-size:32px;font-weight:800;color:var(--ink);line-height:1}
-.hero-sub{font-size:11px;color:var(--dim);margin-top:4px}
+/* Section */
+.section{margin-bottom:20px}
+.section-heading{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid rgba(0,0,0,0.08);display:flex;align-items:center;gap:8px}
+.synced{font-size:8px;font-weight:400;letter-spacing:.5px;color:var(--dim);background:rgba(0,0,0,0.05);padding:2px 6px;border-radius:3px}
+
+/* Hero */
+.hero-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.hero-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+.hero-card.accent{border-top:3px solid var(--rust)}
+.hero-lbl{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+.hero-val{font-size:34px;font-weight:900;color:var(--ink);line-height:1;letter-spacing:-0.02em}
+.hero-sub{font-size:10px;color:var(--dim);margin-top:6px}
+.hero-src{font-size:8px;color:var(--dim);margin-top:10px;padding-top:8px;border-top:1px solid var(--border)}
 .yoy{font-size:11px;margin-top:6px;font-weight:700}
 .yoy.up{color:var(--sage)} .yoy.down{color:var(--rust)} .yoy.flat{color:var(--dim)}
 
-/* Store grid */
-.section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--dim);margin:14px 0 8px}
-.store-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:12px}
-.store-card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:12px 10px;text-align:center}
-.store-name{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
-.store-val{font-size:20px;font-weight:800;color:var(--ink)}
-.store-sub{font-size:9px;color:var(--dim);margin-top:2px}
+/* Live dot */
+.live-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;display:inline-block;margin-right:4px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
-/* Two-col layout */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-.card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:16px}
-.card-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--dim);margin-bottom:12px}
-.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.metric-item{border:1px solid var(--border);border-radius:7px;padding:10px}
-.metric-label{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
-.metric-val{font-size:18px;font-weight:800;color:var(--ink)}
-.metric-sub{font-size:10px;color:var(--dim);margin-top:3px}
+/* Store grid */
+.store-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:10px}
+.store-card{background:var(--card-bg);border:1px solid var(--border);border-radius:9px;padding:14px 10px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.store-name{font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+.store-val{font-size:24px;font-weight:900;color:var(--ink);line-height:1}
+.store-sub{font-size:9px;color:var(--dim);margin-top:3px;min-height:13px}
+
+/* Metric grid */
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
+.metric-card{background:var(--card-bg);border:1px solid var(--border);border-radius:9px;padding:15px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.mc-lbl{font-size:8px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+.mc-val{font-size:26px;font-weight:900;color:var(--ink);line-height:1}
+.mc-sub{font-size:9.5px;color:var(--dim);margin-top:4px}
+.mc-src{font-size:8px;color:var(--dim);margin-top:8px;padding-top:6px;border-top:1px solid var(--border)}
+.pending{display:inline-block;font-size:8px;font-weight:700;letter-spacing:.8px;background:rgba(154,111,16,0.1);color:var(--gold);padding:2px 6px;border-radius:3px}
 
 /* Contacts chart */
-.chart-area{margin-top:10px}
-.chart-bars{display:flex;gap:4px;align-items:flex-end;height:60px}
+.chart-bars{display:flex;gap:4px;align-items:flex-end;height:60px;margin-top:10px}
 .cbar-col{display:flex;flex-direction:column;align-items:center;gap:2px;flex:1;justify-content:flex-end}
 .cbar-val{font-size:9px;color:var(--dim);font-weight:600;line-height:1}
 .cbar{background:var(--rust);border-radius:2px 2px 0 0;width:100%;min-height:2px}
@@ -65,31 +72,19 @@ header h1{font-size:16px;font-weight:700;flex:1}
 /* Channel list */
 .ch-list{display:flex;flex-direction:column;gap:5px;margin-top:4px}
 .ch-row{display:flex;align-items:center;gap:8px}
-.ch-name{font-size:11px;color:var(--ink);width:110px;flex-shrink:0}
+.ch-name{font-size:11px;color:var(--ink);width:120px;flex-shrink:0}
 .ch-bar-bg{flex:1;background:var(--border);border-radius:3px;height:6px;overflow:hidden}
 .ch-bar-fill{height:100%;border-radius:3px;background:var(--rust)}
-.ch-val{font-size:10px;color:var(--dim);width:38px;text-align:right;flex-shrink:0}
+.ch-val{font-size:10px;color:var(--dim);width:42px;text-align:right;flex-shrink:0}
 
-/* Status pills */
-.pill{display:inline-block;padding:2px 8px;border-radius:99px;font-size:10px;font-weight:700}
-.pill-live{background:#dcfce7;color:#166534}
-.pill-pending{background:#fef9c3;color:#854d0e}
-.pill-error{background:#fee2e2;color:#991b1b}
-
-/* Pending overlay */
-.pending-overlay{opacity:.45;pointer-events:none}
-.pending-tag{font-size:10px;color:var(--gold);font-weight:700;margin-top:4px}
-
-.loading{opacity:.4}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 </style>
 </head>
 <body>
 <header>
   <div class="hd-badge">LZB</div>
-  <h1>Marketing Engine — Live Dashboard</h1>
-  <div class="hd-right">
-    <span class="hd-sync" id="sync-time">Loading…</span>
-  </div>
+  <h1>Marketing Engine — Ottawa</h1>
+  <div class="hd-right" id="sync-time">Loading…</div>
 </header>
 
 <div class="page">
@@ -101,121 +96,172 @@ header h1{font-size:16px;font-weight:700;flex:1}
   </div>
 
   <!-- Hero -->
-  <div class="hero-row">
-    <div class="hero-card">
-      <div class="hero-label">Prodco Store Traffic</div>
+  <div class="hero-grid">
+    <div class="hero-card accent">
+      <div class="hero-lbl">Prodco Store Traffic</div>
       <div class="hero-val" id="hero-prodco">—</div>
-      <div class="hero-sub">Visitors across all 5 stores</div>
+      <div class="hero-sub" id="hero-prodco-sub">5 locations</div>
       <div class="yoy flat" id="yoy-prodco"> </div>
+      <div class="hero-src"><span class="live-dot"></span>TRAFFIC_PRODCO · daily</div>
     </div>
-    <div class="hero-card">
-      <div class="hero-label">PERQ Ups</div>
+    <div class="hero-card accent">
+      <div class="hero-lbl">PERQ Walk-In Ups</div>
       <div class="hero-val" id="hero-perq">—</div>
-      <div class="hero-sub">Walk-in ups logged</div>
+      <div class="hero-sub" id="hero-perq-sub">all stores</div>
       <div class="yoy flat" id="yoy-perq"> </div>
+      <div class="hero-src"><span class="live-dot"></span>PERQ_EVENTS · daily</div>
     </div>
     <div class="hero-card">
-      <div class="hero-label">New HubSpot Contacts</div>
+      <div class="hero-lbl">New HubSpot Contacts</div>
       <div class="hero-val" id="hero-contacts">—</div>
-      <div class="hero-sub" id="hero-contacts-sub">This week</div>
-      <div id="metric-contacts-wow"></div>
+      <div class="hero-sub">latest full week</div>
+      <div id="hero-contacts-wow" style="font-size:10px;color:var(--dim);margin-top:4px"></div>
+      <div class="hero-src"><span class="live-dot"></span>HubSpot CRM · daily</div>
     </div>
   </div>
 
-  <!-- Store grid -->
-  <div class="section-title">Store Breakdown — Prodco Traffic</div>
-  <div class="store-grid">
-    <div class="store-card"><div class="store-name">Cyrville</div><div class="store-val" id="store-cyrville">—</div></div>
-    <div class="store-card"><div class="store-name">Kingston</div><div class="store-val" id="store-kingston">—</div></div>
-    <div class="store-card"><div class="store-name">Kanata</div><div class="store-val" id="store-kanata">—</div></div>
-    <div class="store-card"><div class="store-name">Hunt Club</div><div class="store-val" id="store-huntclub">—</div></div>
-    <div class="store-card"><div class="store-name">Gatineau</div><div class="store-val" id="store-gatineau">—</div></div>
-  </div>
-
-  <!-- Row 2 -->
-  <div class="two-col">
-    <!-- CRM -->
-    <div class="card">
-      <div class="card-title">CRM / Lifecycle <span class="pill pill-live" style="margin-left:6px">LIVE</span></div>
-      <div class="metric-grid">
-        <div class="metric-item">
-          <div class="metric-label">Be-Back Rate</div>
-          <div class="metric-val" id="metric-beback">—</div>
-          <div class="metric-sub" id="metric-beback-sub"></div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-label">Total Ups</div>
-          <div class="metric-val" id="metric-perq-total">—</div>
-          <div class="metric-sub">PERQ walk-ins</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-label">Comfort Club</div>
-          <div class="metric-val" id="metric-comfort-club">—</div>
-          <div class="metric-sub">All Batches</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-label">SMS Opt-In</div>
-          <div class="metric-val" id="metric-sms-optin">—</div>
-          <div class="metric-sub">Total opted in</div>
-        </div>
-        <div class="metric-item pending-overlay">
-          <div class="metric-label">Email Open Rate</div>
-          <div class="metric-val">—</div>
-          <div class="pending-tag">↻ Permission needed</div>
-        </div>
-        <div class="metric-item pending-overlay">
-          <div class="metric-label">Workflow Enrollments</div>
-          <div class="metric-val">—</div>
-          <div class="pending-tag">↻ Permission needed</div>
-        </div>
+  <!-- Store: Ups + Be-Backs -->
+  <div class="section">
+    <div class="section-heading">🏪 Ups + Be-Backs by Store</div>
+    <div class="store-grid">
+      <div class="store-card"><div class="store-name">Cyrville</div><div class="store-val" id="store-cyrville">—</div><div class="store-sub" id="store-cyrville-yoy"></div></div>
+      <div class="store-card"><div class="store-name">Hunt Club</div><div class="store-val" id="store-huntclub">—</div><div class="store-sub" id="store-huntclub-yoy"></div></div>
+      <div class="store-card"><div class="store-name">Kanata</div><div class="store-val" id="store-kanata">—</div><div class="store-sub" id="store-kanata-yoy"></div></div>
+      <div class="store-card"><div class="store-name">Kingston</div><div class="store-val" id="store-kingston">—</div><div class="store-sub" id="store-kingston-yoy"></div></div>
+      <div class="store-card"><div class="store-name">Gatineau</div><div class="store-val" id="store-gatineau">—</div><div class="store-sub" id="store-gatineau-yoy"></div></div>
+    </div>
+    <div class="metric-grid" style="margin-top:8px">
+      <div class="metric-card">
+        <div class="mc-lbl">Beback Rate</div>
+        <div class="mc-val" id="metric-beback">—</div>
+        <div class="mc-sub" id="metric-beback-sub">bebacks ÷ walk-ins</div>
+        <div class="mc-src"><span class="live-dot"></span>PERQ_EVENTS · daily</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">Total Walk-In Ups</div>
+        <div class="mc-val" id="metric-perq-total">—</div>
+        <div class="mc-sub" id="metric-perq-sub">all stores</div>
+        <div class="mc-src"><span class="live-dot"></span>PERQ_EVENTS · daily</div>
       </div>
     </div>
+  </div>
 
-    <!-- Contacts chart -->
-    <div class="card">
-      <div class="card-title">New Contacts by Week <span class="pill pill-live" style="margin-left:6px">LIVE</span></div>
-      <div class="hero-val" id="metric-contacts-week">—</div>
-      <div id="metric-contacts-wow" style="margin-top:4px;font-size:10px;color:var(--dim)"></div>
-      <div class="chart-area">
+  <!-- Website Performance -->
+  <div class="section">
+    <div class="section-heading">🌐 Website Performance <span class="synced" id="ga4-synced">GA4 · last synced Aug 24</span></div>
+    <div class="metric-grid" style="margin-bottom:10px">
+      <div class="metric-card">
+        <div class="mc-lbl">Local Sessions (30d)</div>
+        <div class="mc-val" id="ga4-sessions">—</div>
+        <div class="mc-sub">full trade area · all channels</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">Conversions (30d)</div>
+        <div class="mc-val" id="ga4-conversions">—</div>
+        <div class="mc-sub" id="ga4-conv-rate">conversion rate</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">Gatineau Sessions (30d)</div>
+        <div class="mc-val" id="ga4-gatineau">—</div>
+        <div class="mc-sub">meubleslazboy.ca + city filter</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">AI Assistant Traffic</div>
+        <div class="mc-val" id="ga4-ai">—</div>
+        <div class="mc-sub">ChatGPT, Perplexity referrals</div>
+      </div>
+    </div>
+    <div class="ch-list" id="channel-list"></div>
+  </div>
+
+  <!-- CRM & Lifecycle -->
+  <div class="section">
+    <div class="section-heading">👥 CRM & Lifecycle</div>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="mc-lbl">Last Full Week — Contacts</div>
+        <div class="mc-val" id="metric-contacts-week">—</div>
+        <div class="mc-sub" id="metric-contacts-wow"> </div>
+        <div class="mc-src"><span class="live-dot"></span>HubSpot CRM · daily</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">Comfort Club Members</div>
+        <div class="mc-val" id="metric-comfort-club">—</div>
+        <div class="mc-sub">All Batches · total enrolled</div>
+        <div class="mc-src"><span class="live-dot"></span>HubSpot Lists · daily</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">SMS Opted-In</div>
+        <div class="mc-val" id="metric-sms-optin">—</div>
+        <div class="mc-sub">total subscribers</div>
+        <div class="mc-src"><span class="live-dot"></span>HubSpot Lists · daily</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">Email Open Rate</div>
+        <div class="mc-val">—</div>
+        <div class="mc-sub"><span class="pending">needs Marketing Email permissions</span></div>
+      </div>
+      <div class="metric-card" style="grid-column:1/-1">
+        <div class="mc-lbl">New Contacts by Week</div>
         <div class="chart-bars" id="contacts-bars"></div>
       </div>
     </div>
   </div>
 
-  <!-- Row 3 -->
-  <div class="two-col">
-    <!-- GA4 -->
-    <div class="card">
-      <div class="card-title">Website Sessions by Channel <span class="pill pill-pending" style="margin-left:6px">STATIC</span> <span style="font-size:9px;color:var(--dim);margin-left:4px" id="ga4-updated"></span></div>
-      <div class="ch-list" id="channel-list"></div>
-    </div>
-    <!-- Paid Digital placeholder -->
-    <div class="card">
-      <div class="card-title">Paid Digital <span class="pill pill-pending" style="margin-left:6px">PENDING</span></div>
-      <div class="metric-grid">
-        <div class="metric-item pending-overlay">
-          <div class="metric-label">Meta Impressions</div>
-          <div class="metric-val">—</div>
-          <div class="pending-tag">↻ Token needed</div>
-        </div>
-        <div class="metric-item pending-overlay">
-          <div class="metric-label">Meta Clicks</div>
-          <div class="metric-val">—</div>
-          <div class="pending-tag">↻ Token needed</div>
-        </div>
-        <div class="metric-item pending-overlay">
-          <div class="metric-label">Meta Spend</div>
-          <div class="metric-val">—</div>
-          <div class="pending-tag">↻ Token needed</div>
-        </div>
-        <div class="metric-item pending-overlay">
-          <div class="metric-label">Google Ads Spend</div>
-          <div class="metric-val">—</div>
-          <div class="pending-tag">↻ Token needed</div>
-        </div>
+  <!-- Paid Digital -->
+  <div class="section">
+    <div class="section-heading">🎯 Paid Digital</div>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="mc-lbl">Meta — CPA</div>
+        <div class="mc-val" style="font-size:16px">—</div>
+        <div class="mc-sub"><span class="pending">Meta API setup pending</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">Meta — CTR</div>
+        <div class="mc-val" style="font-size:16px">—</div>
+        <div class="mc-sub"><span class="pending">Meta API setup pending</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">Meta — Spend (30d)</div>
+        <div class="mc-val" style="font-size:16px">—</div>
+        <div class="mc-sub"><span class="pending">Meta API setup pending</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">Google — Cost/Conv.</div>
+        <div class="mc-val" style="font-size:16px">—</div>
+        <div class="mc-sub"><span class="pending">GA4 campaign sync pending</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">Google Shopping</div>
+        <div class="mc-val" style="font-size:16px">—</div>
+        <div class="mc-sub"><span class="pending">manual monthly update</span></div>
       </div>
     </div>
   </div>
+
+  <!-- Reviews & Local Search -->
+  <div class="section">
+    <div class="section-heading">⭐ Reviews & Local Search</div>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="mc-lbl">Avg Rating — All Stores</div>
+        <div class="mc-val" style="font-size:16px">—</div>
+        <div class="mc-sub"><span class="pending">GBP API quota pending</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">New Reviews / Month</div>
+        <div class="mc-val" style="font-size:16px">—</div>
+        <div class="mc-sub"><span class="pending">GBP API quota pending</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">Local Search Impressions</div>
+        <div class="mc-val" style="font-size:16px">—</div>
+        <div class="mc-sub"><span class="pending">GBP API quota pending</span></div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -229,9 +275,11 @@ async function loadData() {
     DATA = await r.json();
     render();
     const updated = new Date(DATA.updated);
-    document.getElementById('sync-time').textContent = 'Updated ' + updated.toLocaleDateString('en-CA',{month:'short',day:'numeric'}) + ' ' + updated.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+    document.getElementById('sync-time').textContent =
+      'Updated ' + updated.toLocaleDateString('en-CA',{month:'short',day:'numeric'}) +
+      ' ' + updated.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
   } catch(e) {
-    document.getElementById('sync-time').textContent = 'Load error';
+    document.getElementById('sync-time').textContent = 'Load error — check data.json';
     console.error(e);
   }
 }
@@ -263,19 +311,34 @@ function render() {
   // Hero Prodco
   const prodco = m.prodco[p];
   document.getElementById('hero-prodco').textContent = fmt(prodco?.current);
+  document.getElementById('hero-prodco-sub').textContent = `last ${p === '1d' ? '1 day' : p} · 5 locations`;
   setYOY('yoy-prodco', prodco?.current, prodco?.yoy);
-
-  // Store breakdown
-  const stores = prodco?.stores || {};
-  ['cyrville','kingston','kanata','huntclub','gatineau'].forEach(s => {
-    const el = document.getElementById('store-' + s);
-    if (el) el.textContent = fmt(stores[s]);
-  });
 
   // Hero PERQ
   const perq = m.perq[p];
   document.getElementById('hero-perq').textContent = fmt(perq?.current);
+  document.getElementById('hero-perq-sub').textContent = `last ${p === '1d' ? '1 day' : p} · walk-ins`;
   setYOY('yoy-perq', perq?.current, perq?.yoy);
+
+  // Store grid (PERQ per store)
+  const stores = m.stores?.[p] || {};
+  const storeYOY = m.stores_yoy?.[p] || {};
+  ['cyrville','huntclub','kanata','kingston','gatineau'].forEach(s => {
+    const el = document.getElementById('store-' + s);
+    const subEl = document.getElementById('store-' + s + '-yoy');
+    if (el) el.textContent = fmt(stores[s]);
+    if (subEl) {
+      const cur = stores[s], prev = storeYOY[s];
+      if (cur != null && prev != null && prev > 0) {
+        const pct = ((cur - prev) / prev * 100);
+        const sign = pct >= 0 ? '▲' : '▼';
+        const color = Math.abs(pct) < 1 ? 'var(--dim)' : pct > 0 ? 'var(--sage)' : 'var(--rust)';
+        subEl.innerHTML = `<span style="font-weight:700;color:${color}">${sign}${Math.abs(pct).toFixed(0)}% LY</span>`;
+      } else {
+        subEl.textContent = '';
+      }
+    }
+  });
 
   // Beback
   const bb = m.beback[p];
@@ -285,22 +348,47 @@ function render() {
     document.getElementById('metric-beback-sub').textContent = bb.current + ' be-backs / ' + bb.total_ups + ' ups';
   }
   document.getElementById('metric-perq-total').textContent = fmt(perq?.current);
+  document.getElementById('metric-perq-sub').textContent = `last ${p === '1d' ? '1 day' : p}`;
 
-  // Comfort Club + SMS (period-independent)
-  document.getElementById('metric-comfort-club').textContent = fmt(m.comfort_club);
-  document.getElementById('metric-sms-optin').textContent = fmt(m.sms_optin);
+  // GA4 (period-independent static)
+  const ga4 = m.ga4 || {};
+  document.getElementById('ga4-sessions').textContent = fmt(ga4.sessions);
+  document.getElementById('ga4-conversions').textContent = fmt(ga4.conversions);
+  if (ga4.sessions > 0) {
+    document.getElementById('ga4-conv-rate').textContent = (ga4.conversions / ga4.sessions * 100).toFixed(1) + '% conversion rate';
+  }
+  document.getElementById('ga4-gatineau').textContent = fmt(ga4.gatineau_sessions);
+  document.getElementById('ga4-ai').textContent = fmt(ga4.ai_traffic);
+  if (d.ga4_updated) {
+    document.getElementById('ga4-synced').textContent = `GA4 · last synced ${d.ga4_updated}`;
+  }
 
-  // Contacts
+  // GA4 channel chart
+  const channels = m.ga4_channels || [];
+  const maxCh = Math.max(...channels.map(c => c.val));
+  document.getElementById('channel-list').innerHTML = channels.map(c => {
+    const pct = maxCh > 0 ? Math.round(c.val / maxCh * 100) : 0;
+    return `<div class="ch-row">
+      <span class="ch-name">${c.name}</span>
+      <div class="ch-bar-bg"><div class="ch-bar-fill" style="width:${pct}%"></div></div>
+      <span class="ch-val">${c.val.toLocaleString()}</span>
+    </div>`;
+  }).join('');
+
+  // Contacts hero + WoW
   const contacts = m.contacts;
   document.getElementById('hero-contacts').textContent = fmt(contacts?.latest_week);
+  document.getElementById('metric-contacts-week').textContent = fmt(contacts?.latest_week);
   const wowEl = document.getElementById('metric-contacts-wow');
-  if (wowEl && contacts?.prev_week > 0) {
+  const heroWowEl = document.getElementById('hero-contacts-wow');
+  if (contacts?.prev_week > 0) {
     const wow = (contacts.latest_week - contacts.prev_week) / contacts.prev_week * 100;
     const sign = wow >= 0 ? '▲' : '▼';
     const color = Math.abs(wow) < 1 ? 'var(--dim)' : wow > 0 ? 'var(--sage)' : 'var(--rust)';
-    wowEl.innerHTML = '<span style="font-weight:700;color:'+color+'">'+sign+Math.abs(wow).toFixed(1)+'%</span> vs prev week ('+contacts.prev_week.toLocaleString()+')';
+    const html = `<span style="font-weight:700;color:${color}">${sign}${Math.abs(wow).toFixed(1)}%</span> vs prev week (${contacts.prev_week.toLocaleString()})`;
+    if (wowEl) wowEl.innerHTML = html;
+    if (heroWowEl) heroWowEl.innerHTML = html;
   }
-  document.getElementById('metric-contacts-week').textContent = fmt(contacts?.latest_week);
 
   // Contacts chart
   const weeks = (contacts?.by_week || []).slice(0, 8).reverse();
@@ -317,18 +405,9 @@ function render() {
     </div>`;
   }).join('');
 
-  // GA4 channels
-  const channels = m.ga4_channels || [];
-  const maxCh = Math.max(...channels.map(c => c.val));
-  document.getElementById('ga4-updated').textContent = d.ga4_updated ? 'as of ' + d.ga4_updated : '';
-  document.getElementById('channel-list').innerHTML = channels.map(c => {
-    const pct = maxCh > 0 ? Math.round(c.val / maxCh * 100) : 0;
-    return `<div class="ch-row">
-      <span class="ch-name">${c.name}</span>
-      <div class="ch-bar-bg"><div class="ch-bar-fill" style="width:${pct}%"></div></div>
-      <span class="ch-val">${c.val.toLocaleString()}</span>
-    </div>`;
-  }).join('');
+  // CRM lists
+  document.getElementById('metric-comfort-club').textContent = fmt(m.comfort_club);
+  document.getElementById('metric-sms-optin').textContent = fmt(m.sms_optin);
 }
 
 loadData();
