@@ -30,6 +30,11 @@
     "contacts": {
       "latest_week": 352,
       "prev_week": 699,
+      "by_period": {
+        "1d": null,
+        "7d": null,
+        "30d": null
+      },
       "by_week": [
         { "week": "2026-08-17", "count": 352 },
         { "week": "2026-08-10", "count": 699 },
@@ -41,8 +46,11 @@
         { "week": "2026-06-29", "count": 450 }
       ]
     },
-    "comfort_club": 27808,
-    "sms_optin": 42883,
+    "deals": {
+      "1d": { "count": null, "revenue": null },
+      "7d": { "count": null, "revenue": null },
+      "30d": { "count": null, "revenue": null }
+    },
     "ga4": {
       "sessions": 37802,
       "conversions": 2645,
