@@ -1,11 +1,11 @@
 {
-  "updated": "2026-08-24T06:00:00",
+  "updated": "2026-08-24T17:00:00",
   "ga4_updated": "Aug 24, 2026",
   "metrics": {
     "prodco": {
-      "1d": { "current": 397, "yoy": null, "stores": { "cyrville": null, "kingston": null, "kanata": null, "huntclub": null, "gatineau": null } },
-      "7d": { "current": 2935, "yoy": 2841, "stores": { "cyrville": 788, "kingston": 534, "kanata": 616, "huntclub": 641, "gatineau": 468 } },
-      "30d": { "current": 11763, "yoy": null, "stores": { "cyrville": null, "kingston": null, "kanata": null, "huntclub": null, "gatineau": null } }
+      "1d": { "current": 397, "yoy": null },
+      "7d": { "current": 2921, "yoy": 2841 },
+      "30d": { "current": 11763, "yoy": null }
     },
     "perq": {
       "1d": { "current": 122, "yoy": 143 },
@@ -16,6 +16,16 @@
       "1d": { "current": 16, "total_ups": 122 },
       "7d": { "current": 79, "total_ups": 666 },
       "30d": { "current": 324, "total_ups": 2755 }
+    },
+    "stores": {
+      "1d": { "cyrville": null, "huntclub": null, "kanata": null, "kingston": null, "gatineau": null },
+      "7d": { "cyrville": 162, "huntclub": 198, "kingston": 151, "kanata": 141, "gatineau": 93 },
+      "30d": { "cyrville": null, "huntclub": null, "kanata": null, "kingston": null, "gatineau": null }
+    },
+    "stores_yoy": {
+      "1d": { "cyrville": null, "huntclub": null, "kanata": null, "kingston": null, "gatineau": null },
+      "7d": { "cyrville": null, "huntclub": null, "kanata": null, "kingston": null, "gatineau": null },
+      "30d": { "cyrville": null, "huntclub": null, "kanata": null, "kingston": null, "gatineau": null }
     },
     "contacts": {
       "latest_week": 352,
@@ -33,6 +43,12 @@
     },
     "comfort_club": 27808,
     "sms_optin": 42883,
+    "ga4": {
+      "sessions": 37802,
+      "conversions": 2645,
+      "gatineau_sessions": 3986,
+      "ai_traffic": 32
+    },
     "ga4_channels": [
       { "name": "Paid Social",      "val": 25585 },
       { "name": "Direct",           "val": 3693  },
