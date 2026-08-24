@@ -114,8 +114,7 @@ header h1{font-size:16px;font-weight:700;flex:1}
     <div class="hero-card">
       <div class="hero-lbl">New HubSpot Contacts</div>
       <div class="hero-val" id="hero-contacts">—</div>
-      <div class="hero-sub">latest full week</div>
-      <div id="hero-contacts-wow" style="font-size:10px;color:var(--dim);margin-top:4px"></div>
+      <div class="hero-sub" id="hero-contacts-sub">loading…</div>
       <div class="hero-src"><span class="live-dot"></span>HubSpot CRM · daily</div>
     </div>
   </div>
@@ -179,26 +178,31 @@ header h1{font-size:16px;font-weight:700;flex:1}
     <div class="section-heading">👥 CRM & Lifecycle</div>
     <div class="metric-grid">
       <div class="metric-card">
-        <div class="mc-lbl">Last Full Week — Contacts</div>
+        <div class="mc-lbl" id="metric-contacts-label">New Contacts</div>
         <div class="mc-val" id="metric-contacts-week">—</div>
-        <div class="mc-sub" id="metric-contacts-wow"> </div>
+        <div class="mc-sub" id="metric-contacts-sub"> </div>
         <div class="mc-src"><span class="live-dot"></span>HubSpot CRM · daily</div>
       </div>
       <div class="metric-card">
-        <div class="mc-lbl">Comfort Club Members</div>
-        <div class="mc-val" id="metric-comfort-club">—</div>
-        <div class="mc-sub">All Batches · total enrolled</div>
-        <div class="mc-src"><span class="live-dot"></span>HubSpot Lists · daily</div>
+        <div class="mc-lbl">Deals Closed</div>
+        <div class="mc-val" id="metric-deals">—</div>
+        <div class="mc-sub" id="metric-deals-sub">closed-won · all stores</div>
+        <div class="mc-src"><span class="live-dot"></span>HubSpot CRM · daily</div>
       </div>
       <div class="metric-card">
-        <div class="mc-lbl">SMS Opted-In</div>
-        <div class="mc-val" id="metric-sms-optin">—</div>
-        <div class="mc-sub">total subscribers</div>
-        <div class="mc-src"><span class="live-dot"></span>HubSpot Lists · daily</div>
+        <div class="mc-lbl">Deal Revenue</div>
+        <div class="mc-val" id="metric-deals-rev">—</div>
+        <div class="mc-sub" id="metric-deals-rev-sub">CAD · closed-won</div>
+        <div class="mc-src"><span class="live-dot"></span>HubSpot CRM · daily</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-lbl">SMS Conversion Rate (30d)</div>
+        <div class="mc-val" style="font-size:16px">—</div>
+        <div class="mc-sub"><span class="pending">SalesMSG integration pending</span></div>
       </div>
       <div class="metric-card">
         <div class="mc-lbl">Email Open Rate</div>
-        <div class="mc-val">—</div>
+        <div class="mc-val" style="font-size:16px">—</div>
         <div class="mc-sub"><span class="pending">needs Marketing Email permissions</span></div>
       </div>
       <div class="metric-card" style="grid-column:1/-1">
@@ -375,22 +379,20 @@ function render() {
     </div>`;
   }).join('');
 
-  // Contacts hero + WoW
+  // Contacts — period-sensitive
   const contacts = m.contacts;
-  document.getElementById('hero-contacts').textContent = fmt(contacts?.latest_week);
-  document.getElementById('metric-contacts-week').textContent = fmt(contacts?.latest_week);
-  const wowEl = document.getElementById('metric-contacts-wow');
-  const heroWowEl = document.getElementById('hero-contacts-wow');
-  if (contacts?.prev_week > 0) {
-    const wow = (contacts.latest_week - contacts.prev_week) / contacts.prev_week * 100;
-    const sign = wow >= 0 ? '▲' : '▼';
-    const color = Math.abs(wow) < 1 ? 'var(--dim)' : wow > 0 ? 'var(--sage)' : 'var(--rust)';
-    const html = `<span style="font-weight:700;color:${color}">${sign}${Math.abs(wow).toFixed(1)}%</span> vs prev week (${contacts.prev_week.toLocaleString()})`;
-    if (wowEl) wowEl.innerHTML = html;
-    if (heroWowEl) heroWowEl.innerHTML = html;
-  }
+  const contactsPeriodCount = contacts?.by_period?.[p] ?? contacts?.latest_week;
+  document.getElementById('hero-contacts').textContent = fmt(contactsPeriodCount);
+  document.getElementById('metric-contacts-week').textContent = fmt(contactsPeriodCount);
+  const periodLbl = p === '1d' ? 'Yesterday' : `Last ${p === '7d' ? '7' : '30'} Days`;
+  const lblEl = document.getElementById('metric-contacts-label');
+  if (lblEl) lblEl.textContent = `New Contacts — ${periodLbl}`;
+  const subEl = document.getElementById('hero-contacts-sub');
+  if (subEl) subEl.textContent = p === '1d' ? 'yesterday' : `last ${p === '7d' ? '7' : '30'} days`;
+  const conSubEl = document.getElementById('metric-contacts-sub');
+  if (conSubEl) conSubEl.textContent = p === '1d' ? 'yesterday' : `last ${p === '7d' ? '7' : '30'} days`;
 
-  // Contacts chart
+  // Contacts chart (always weekly)
   const weeks = (contacts?.by_week || []).slice(0, 8).reverse();
   const maxV = Math.max(...weeks.map(w => w.count || 0));
   const MAX_PX = 48;
@@ -405,9 +407,18 @@ function render() {
     </div>`;
   }).join('');
 
-  // CRM lists
-  document.getElementById('metric-comfort-club').textContent = fmt(m.comfort_club);
-  document.getElementById('metric-sms-optin').textContent = fmt(m.sms_optin);
+  // Deals + Revenue — period-sensitive
+  const deals = m.deals?.[p];
+  const dealCnt = deals?.count ?? null;
+  const dealRev = deals?.revenue ?? null;
+  document.getElementById('metric-deals').textContent = fmt(dealCnt);
+  const revFmt = dealRev == null ? '—' : dealRev >= 1000000
+    ? `$${(dealRev/1000000).toFixed(2)}M`
+    : dealRev >= 1000 ? `$${Math.round(dealRev/1000)}K` : `$${Math.round(dealRev)}`;
+  document.getElementById('metric-deals-rev').textContent = revFmt;
+  const dayLabel = p === '1d' ? '1 day' : p;
+  document.getElementById('metric-deals-sub').textContent = `last ${dayLabel} · closed-won`;
+  document.getElementById('metric-deals-rev-sub').textContent = `last ${dayLabel} · CAD`;
 }
 
 loadData();
