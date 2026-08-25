@@ -1,31 +1,94 @@
 {
   "updated": "2026-08-24T17:00:00",
-  "ga4_updated": "Aug 24, 2026",
+  "ga4_updated": "Aug 25, 2026",
   "metrics": {
     "prodco": {
-      "1d": { "current": 397, "yoy": null },
-      "7d": { "current": 2921, "yoy": 2841 },
-      "30d": { "current": 11763, "yoy": null }
+      "1d": {
+        "current": 397,
+        "yoy": null
+      },
+      "7d": {
+        "current": 2921,
+        "yoy": 2841
+      },
+      "30d": {
+        "current": 11763,
+        "yoy": null
+      }
     },
     "perq": {
-      "1d": { "current": 122, "yoy": 143 },
-      "7d": { "current": 666, "yoy": 636 },
-      "30d": { "current": 2755, "yoy": 2563 }
+      "1d": {
+        "current": 122,
+        "yoy": 143
+      },
+      "7d": {
+        "current": 666,
+        "yoy": 636
+      },
+      "30d": {
+        "current": 2755,
+        "yoy": 2563
+      }
     },
     "beback": {
-      "1d": { "current": 16, "total_ups": 122 },
-      "7d": { "current": 79, "total_ups": 666 },
-      "30d": { "current": 324, "total_ups": 2755 }
+      "1d": {
+        "current": 16,
+        "total_ups": 122
+      },
+      "7d": {
+        "current": 79,
+        "total_ups": 666
+      },
+      "30d": {
+        "current": 324,
+        "total_ups": 2755
+      }
     },
     "stores": {
-      "1d": { "cyrville": null, "huntclub": null, "kanata": null, "kingston": null, "gatineau": null },
-      "7d": { "cyrville": 162, "huntclub": 198, "kingston": 151, "kanata": 141, "gatineau": 93 },
-      "30d": { "cyrville": null, "huntclub": null, "kanata": null, "kingston": null, "gatineau": null }
+      "1d": {
+        "cyrville": null,
+        "huntclub": null,
+        "kanata": null,
+        "kingston": null,
+        "gatineau": null
+      },
+      "7d": {
+        "cyrville": 162,
+        "huntclub": 198,
+        "kingston": 151,
+        "kanata": 141,
+        "gatineau": 93
+      },
+      "30d": {
+        "cyrville": null,
+        "huntclub": null,
+        "kanata": null,
+        "kingston": null,
+        "gatineau": null
+      }
     },
     "stores_yoy": {
-      "1d": { "cyrville": null, "huntclub": null, "kanata": null, "kingston": null, "gatineau": null },
-      "7d": { "cyrville": null, "huntclub": null, "kanata": null, "kingston": null, "gatineau": null },
-      "30d": { "cyrville": null, "huntclub": null, "kanata": null, "kingston": null, "gatineau": null }
+      "1d": {
+        "cyrville": null,
+        "huntclub": null,
+        "kanata": null,
+        "kingston": null,
+        "gatineau": null
+      },
+      "7d": {
+        "cyrville": null,
+        "huntclub": null,
+        "kanata": null,
+        "kingston": null,
+        "gatineau": null
+      },
+      "30d": {
+        "cyrville": null,
+        "huntclub": null,
+        "kanata": null,
+        "kingston": null,
+        "gatineau": null
+      }
     },
     "contacts": {
       "latest_week": 352,
@@ -36,40 +99,121 @@
         "30d": null
       },
       "by_week": [
-        { "week": "2026-08-17", "count": 352 },
-        { "week": "2026-08-10", "count": 699 },
-        { "week": "2026-08-03", "count": 2877 },
-        { "week": "2026-07-27", "count": 281 },
-        { "week": "2026-07-20", "count": 230 },
-        { "week": "2026-07-13", "count": 312 },
-        { "week": "2026-07-06", "count": 355 },
-        { "week": "2026-06-29", "count": 450 }
+        {
+          "week": "2026-08-17",
+          "count": 352
+        },
+        {
+          "week": "2026-08-10",
+          "count": 699
+        },
+        {
+          "week": "2026-08-03",
+          "count": 2877
+        },
+        {
+          "week": "2026-07-27",
+          "count": 281
+        },
+        {
+          "week": "2026-07-20",
+          "count": 230
+        },
+        {
+          "week": "2026-07-13",
+          "count": 312
+        },
+        {
+          "week": "2026-07-06",
+          "count": 355
+        },
+        {
+          "week": "2026-06-29",
+          "count": 450
+        }
       ]
     },
     "deals": {
-      "1d": { "count": null, "revenue": null },
-      "7d": { "count": null, "revenue": null },
-      "30d": { "count": null, "revenue": null }
+      "1d": {
+        "count": null,
+        "revenue": null
+      },
+      "7d": {
+        "count": null,
+        "revenue": null
+      },
+      "30d": {
+        "count": null,
+        "revenue": null
+      }
     },
     "ga4": {
-      "sessions": 37802,
-      "conversions": 2645,
-      "gatineau_sessions": 3986,
-      "ai_traffic": 32
+      "sessions": 21396,
+      "conversions": 1376,
+      "gatineau_sessions": 3950,
+      "ai_traffic": 14740
     },
     "ga4_channels": [
-      { "name": "Paid Social",      "val": 25585 },
-      { "name": "Direct",           "val": 3693  },
-      { "name": "Paid Search",      "val": 2757  },
-      { "name": "Organic Search",   "val": 1452  },
-      { "name": "Referral",         "val": 1328  },
-      { "name": "Cross-network",    "val": 1118  },
-      { "name": "Unassigned",       "val": 829   },
-      { "name": "Email",            "val": 818   },
-      { "name": "Organic Shopping", "val": 89    },
-      { "name": "Organic Social",   "val": 63    },
-      { "name": "Paid Shopping",    "val": 38    },
-      { "name": "AI Assistant",     "val": 32    }
+      {
+        "name": "AI Assistant",
+        "val": 14740
+      },
+      {
+        "name": "Direct",
+        "val": 1923
+      },
+      {
+        "name": "AI Assistant",
+        "val": 1652
+      },
+      {
+        "name": "Organic Search",
+        "val": 831
+      },
+      {
+        "name": "Referral",
+        "val": 711
+      },
+      {
+        "name": "AI Assistant",
+        "val": 538
+      },
+      {
+        "name": "Unassigned",
+        "val": 447
+      },
+      {
+        "name": "Cross-network",
+        "val": 387
+      },
+      {
+        "name": "Organic Social",
+        "val": 65
+      },
+      {
+        "name": "Organic Shopping",
+        "val": 51
+      },
+      {
+        "name": "AI Assistant",
+        "val": 24
+      },
+      {
+        "name": "AI Assistant",
+        "val": 13
+      },
+      {
+        "name": "Organic Video",
+        "val": 7
+      },
+      {
+        "name": "AI Assistant",
+        "val": 6
+      },
+      {
+        "name": "AI Assistant",
+        "val": 1
+      }
     ]
   }
 }
