@@ -1,6 +1,8 @@
 {
-  "updated": "2026-08-24T17:00:00",
-  "ga4_updated": "Aug 25, 2026",
+  "updated": "2026-09-03T11:20:59Z",
+  "ga4_updated": "Aug 24, 2026",
+  "sql_updated": "2026-08-28T10:09:16Z",
+  "sql_stale": true,
   "metrics": {
     "prodco": {
       "1d": {
@@ -48,8 +50,8 @@
       "1d": {
         "cyrville": null,
         "huntclub": null,
-        "kanata": null,
         "kingston": null,
+        "kanata": null,
         "gatineau": null
       },
       "7d": {
@@ -62,8 +64,8 @@
       "30d": {
         "cyrville": null,
         "huntclub": null,
-        "kanata": null,
         "kingston": null,
+        "kanata": null,
         "gatineau": null
       }
     },
@@ -71,45 +73,49 @@
       "1d": {
         "cyrville": null,
         "huntclub": null,
-        "kanata": null,
         "kingston": null,
+        "kanata": null,
         "gatineau": null
       },
       "7d": {
         "cyrville": null,
         "huntclub": null,
-        "kanata": null,
         "kingston": null,
+        "kanata": null,
         "gatineau": null
       },
       "30d": {
         "cyrville": null,
         "huntclub": null,
-        "kanata": null,
         "kingston": null,
+        "kanata": null,
         "gatineau": null
       }
     },
     "contacts": {
-      "latest_week": 352,
-      "prev_week": 699,
+      "latest_week": 349,
+      "prev_week": 347,
       "by_period": {
-        "1d": null,
-        "7d": null,
-        "30d": null
+        "1d": 50,
+        "7d": 285,
+        "30d": 4257
       },
       "by_week": [
         {
+          "week": "2026-08-24",
+          "count": 349
+        },
+        {
           "week": "2026-08-17",
-          "count": 352
+          "count": 347
         },
         {
           "week": "2026-08-10",
-          "count": 699
+          "count": 617
         },
         {
           "week": "2026-08-03",
-          "count": 2877
+          "count": 2874
         },
         {
           "week": "2026-07-27",
@@ -135,84 +141,72 @@
     },
     "deals": {
       "1d": {
-        "count": null,
-        "revenue": null
+        "count": 0,
+        "revenue": 0
       },
       "7d": {
-        "count": null,
-        "revenue": null
+        "count": 189,
+        "revenue": 541596.24
       },
       "30d": {
-        "count": null,
-        "revenue": null
+        "count": 824,
+        "revenue": 2517878.77
       }
     },
     "ga4": {
-      "sessions": 21396,
-      "conversions": 1376,
-      "gatineau_sessions": 3950,
-      "ai_traffic": 14740
+      "sessions": 37802,
+      "conversions": 2645,
+      "gatineau_sessions": 3986,
+      "ai_traffic": 32
     },
     "ga4_channels": [
       {
-        "name": "AI Assistant",
-        "val": 14740
+        "name": "Paid Social",
+        "val": 25585
       },
       {
         "name": "Direct",
-        "val": 1923
+        "val": 3693
       },
       {
-        "name": "AI Assistant",
-        "val": 1652
+        "name": "Paid Search",
+        "val": 2757
       },
       {
         "name": "Organic Search",
-        "val": 831
+        "val": 1452
       },
       {
         "name": "Referral",
-        "val": 711
-      },
-      {
-        "name": "AI Assistant",
-        "val": 538
-      },
-      {
-        "name": "Unassigned",
-        "val": 447
+        "val": 1328
       },
       {
         "name": "Cross-network",
-        "val": 387
+        "val": 1118
       },
       {
-        "name": "Organic Social",
-        "val": 65
+        "name": "Unassigned",
+        "val": 829
+      },
+      {
+        "name": "Email",
+        "val": 818
       },
       {
         "name": "Organic Shopping",
-        "val": 51
+        "val": 89
+      },
+      {
+        "name": "Organic Social",
+        "val": 63
+      },
+      {
+        "name": "Paid Shopping",
+        "val": 38
       },
       {
         "name": "AI Assistant",
-        "val": 24
-      },
-      {
-        "name": "AI Assistant",
-        "val": 13
-      },
-      {
-        "name": "Organic Video",
-        "val": 7
-      },
-      {
-        "name": "AI Assistant",
-        "val": 6
-      },
-      {
-        "name": "AI Assistant",
-        "val": 1
+        "val": 32
       }
     ]
   }
