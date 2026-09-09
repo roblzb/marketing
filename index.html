@@ -44,6 +44,10 @@ header h1{font-size:16px;font-weight:700;flex:1}
 
 /* Live dot */
 .live-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;display:inline-block;margin-right:4px;animation:pulse 2s infinite}
+/* Stale data: SQL-backed tiles when the 10.1.65.5 pull hasn't run (no VPN). */
+.stale-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;display:inline-block;margin-right:4px}
+.stale-badge{font-size:8px;font-weight:700;letter-spacing:.5px;color:#7a5600;background:rgba(154,111,16,0.13);border:1px solid rgba(154,111,16,0.3);padding:2px 6px;border-radius:3px;text-transform:none}
+.stale .hero-val,.stale .mc-val,.stale .store-val{color:var(--gold)}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
 /* Store grid */
@@ -102,14 +106,14 @@ header h1{font-size:16px;font-weight:700;flex:1}
       <div class="hero-val" id="hero-prodco">—</div>
       <div class="hero-sub" id="hero-prodco-sub">5 locations</div>
       <div class="yoy flat" id="yoy-prodco"> </div>
-      <div class="hero-src"><span class="live-dot"></span>TRAFFIC_PRODCO · daily</div>
+      <div class="hero-src" id="src-prodco"><span class="live-dot"></span>TRAFFIC_PRODCO · daily</div>
     </div>
     <div class="hero-card accent">
       <div class="hero-lbl">PERQ Walk-In Ups</div>
       <div class="hero-val" id="hero-perq">—</div>
       <div class="hero-sub" id="hero-perq-sub">all stores</div>
       <div class="yoy flat" id="yoy-perq"> </div>
-      <div class="hero-src"><span class="live-dot"></span>PERQ_EVENTS · daily</div>
+      <div class="hero-src" id="src-perq"><span class="live-dot"></span>PERQ_EVENTS · daily</div>
     </div>
     <div class="hero-card">
       <div class="hero-lbl">New HubSpot Contacts</div>
@@ -121,7 +125,7 @@ header h1{font-size:16px;font-weight:700;flex:1}
 
   <!-- Store: Ups + Be-Backs -->
   <div class="section">
-    <div class="section-heading">🏪 Ups + Be-Backs by Store</div>
+    <div class="section-heading">🏪 Ups + Be-Backs by Store <span class="stale-badge" id="store-stale" style="display:none"></span></div>
     <div class="store-grid">
       <div class="store-card"><div class="store-name">Cyrville</div><div class="store-val" id="store-cyrville">—</div><div class="store-sub" id="store-cyrville-yoy"></div></div>
       <div class="store-card"><div class="store-name">Hunt Club</div><div class="store-val" id="store-huntclub">—</div><div class="store-sub" id="store-huntclub-yoy"></div></div>
@@ -134,13 +138,13 @@ header h1{font-size:16px;font-weight:700;flex:1}
         <div class="mc-lbl">Beback Rate</div>
         <div class="mc-val" id="metric-beback">—</div>
         <div class="mc-sub" id="metric-beback-sub">bebacks ÷ walk-ins</div>
-        <div class="mc-src"><span class="live-dot"></span>PERQ_EVENTS · daily</div>
+        <div class="mc-src" id="src-beback"><span class="live-dot"></span>PERQ_EVENTS · daily</div>
       </div>
       <div class="metric-card">
         <div class="mc-lbl">Total Walk-In Ups</div>
         <div class="mc-val" id="metric-perq-total">—</div>
         <div class="mc-sub" id="metric-perq-sub">all stores</div>
-        <div class="mc-src"><span class="live-dot"></span>PERQ_EVENTS · daily</div>
+        <div class="mc-src" id="src-perq-total"><span class="live-dot"></span>PERQ_EVENTS · daily</div>
       </div>
     </div>
   </div>
@@ -279,9 +283,14 @@ async function loadData() {
     DATA = await r.json();
     render();
     const updated = new Date(DATA.updated);
-    document.getElementById('sync-time').textContent =
-      'Updated ' + updated.toLocaleDateString('en-CA',{month:'short',day:'numeric'}) +
+    let stamp = 'Updated ' + updated.toLocaleDateString('en-CA',{month:'short',day:'numeric'}) +
       ' ' + updated.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+    // Don't let the header imply the store data is as fresh as the CRM data.
+    if (DATA.sql_stale === true) {
+      const asOf = DATA.sql_updated ? shortDate(DATA.sql_updated) : null;
+      stamp += asOf ? ` · store data ${asOf}` : ' · store data pending';
+    }
+    document.getElementById('sync-time').textContent = stamp;
   } catch(e) {
     document.getElementById('sync-time').textContent = 'Load error — check data.json';
     console.error(e);
@@ -306,6 +315,49 @@ function setYOY(id, current, prior) {
 }
 
 function fmt(n) { return n == null ? '—' : Number(n).toLocaleString(); }
+
+// ── SQL freshness ───────────────────────────────────────────────────────────
+// Prodco / PERQ / beback / per-store all come from SQL at 10.1.65.5, which is
+// only reachable on the LZB network or VPN. When that pull hasn't run, the
+// refresh still publishes fresh HubSpot numbers, so these tiles would otherwise
+// show old data under a current "Updated" header. Label them instead of hiding.
+function shortDate(iso) {
+  const d = new Date(iso);
+  return isNaN(d) ? null : d.toLocaleDateString('en-CA',{month:'short',day:'numeric'});
+}
+
+function applySqlFreshness(d) {
+  const stale = d.sql_stale === true;
+  const asOf  = d.sql_updated ? shortDate(d.sql_updated) : null;
+  const label = stale ? (asOf ? `as of ${asOf}` : 'awaiting sync') : null;
+
+  // Source footers on the four SQL-backed tiles
+  const srcs = {
+    'src-prodco':     'TRAFFIC_PRODCO',
+    'src-perq':       'PERQ_EVENTS',
+    'src-beback':     'PERQ_EVENTS',
+    'src-perq-total': 'PERQ_EVENTS',
+  };
+  Object.entries(srcs).forEach(([id, src]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = stale
+      ? `<span class="stale-dot"></span>${src} · ${label}`
+      : `<span class="live-dot"></span>${src} · daily`;
+    const card = el.closest('.hero-card, .metric-card');
+    if (card) card.classList.toggle('stale', stale);
+  });
+
+  // Badge on the store section heading + amber store values
+  const badge = document.getElementById('store-stale');
+  if (badge) {
+    badge.textContent = label ? `⚠ store data ${label}` : '';
+    badge.style.display = stale ? '' : 'none';
+  }
+  document.querySelectorAll('.store-card').forEach(c => c.classList.toggle('stale', stale));
+
+  return { stale, asOf };
+}
 
 function render() {
   const d = DATA;
@@ -366,6 +418,9 @@ function render() {
   if (d.ga4_updated) {
     document.getElementById('ga4-synced').textContent = `GA4 · last synced ${d.ga4_updated}`;
   }
+
+  // SQL freshness labelling (Prodco / PERQ / beback / stores)
+  applySqlFreshness(d);
 
   // GA4 channel chart
   const channels = m.ga4_channels || [];
