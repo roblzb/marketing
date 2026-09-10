@@ -1,6 +1,6 @@
 {
   "updated": "2026-09-09T11:04:07Z",
-  "ga4_updated": "Aug 24, 2026",
+  "ga4_updated": "Sep 10, 2026",
   "sql_updated": "2026-08-28T10:09:16Z",
   "sql_stale": true,
   "metrics": {
@@ -154,59 +154,71 @@
       }
     },
     "ga4": {
-      "sessions": 37802,
-      "conversions": 2645,
-      "gatineau_sessions": 3986,
-      "ai_traffic": 32
+      "sessions": 18005,
+      "conversions": 1501,
+      "gatineau_sessions": 3099,
+      "ai_traffic": 11423
     },
     "ga4_channels": [
       {
-        "name": "Paid Social",
-        "val": 25585
+        "name": "AI Assistant",
+        "val": 11423
       },
       {
         "name": "Direct",
-        "val": 3693
-      },
-      {
-        "name": "Paid Search",
-        "val": 2757
-      },
-      {
-        "name": "Organic Search",
-        "val": 1452
-      },
-      {
-        "name": "Referral",
-        "val": 1328
-      },
-      {
-        "name": "Cross-network",
-        "val": 1118
-      },
-      {
-        "name": "Unassigned",
-        "val": 829
-      },
-      {
-        "name": "Email",
-        "val": 818
-      },
-      {
-        "name": "Organic Shopping",
-        "val": 89
-      },
-      {
-        "name": "Organic Social",
-        "val": 63
-      },
-      {
-        "name": "Paid Shopping",
-        "val": 38
+        "val": 1773
       },
       {
         "name": "AI Assistant",
-        "val": 32
+        "val": 1772
+      },
+      {
+        "name": "Organic Search",
+        "val": 777
+      },
+      {
+        "name": "Referral",
+        "val": 707
+      },
+      {
+        "name": "AI Assistant",
+        "val": 545
+      },
+      {
+        "name": "Cross-network",
+        "val": 425
+      },
+      {
+        "name": "Unassigned",
+        "val": 403
+      },
+      {
+        "name": "Organic Social",
+        "val": 80
+      },
+      {
+        "name": "AI Assistant",
+        "val": 44
+      },
+      {
+        "name": "Organic Shopping",
+        "val": 35
+      },
+      {
+        "name": "AI Assistant",
+        "val": 11
+      },
+      {
+        "name": "Organic Video",
+        "val": 7
+      },
+      {
+        "name": "AI Assistant",
+        "val": 2
+      },
+      {
+        "name": "AI Assistant",
+        "val": 1
       }
     ]
   }
