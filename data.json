@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-09T11:04:07Z",
+  "updated": "2026-09-10T11:53:57Z",
   "ga4_updated": "Sep 10, 2026",
   "sql_updated": "2026-08-28T10:09:16Z",
   "sql_stale": true,
@@ -93,17 +93,17 @@
       }
     },
     "contacts": {
-      "latest_week": 238,
+      "latest_week": 237,
       "prev_week": 346,
       "by_period": {
-        "1d": 33,
-        "7d": 229,
-        "30d": 1586
+        "1d": 36,
+        "7d": 219,
+        "30d": 1216
       },
       "by_week": [
         {
           "week": "2026-08-31",
-          "count": 238
+          "count": 237
         },
         {
           "week": "2026-08-24",
@@ -145,12 +145,12 @@
         "revenue": 0
       },
       "7d": {
-        "count": 135,
-        "revenue": 401652.64
+        "count": 126,
+        "revenue": 381621.63
       },
       "30d": {
-        "count": 794,
-        "revenue": 2423582.59
+        "count": 793,
+        "revenue": 2402899.97
       }
     },
     "ga4": {
