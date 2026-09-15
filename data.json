@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14T12:22:15Z",
+  "updated": "2026-09-15T10:11:02Z",
   "ga4_updated": "Sep 15, 2026",
   "sql_updated": "2026-08-28T10:09:16Z",
   "sql_stale": true,
@@ -96,9 +96,9 @@
       "latest_week": 204,
       "prev_week": 237,
       "by_period": {
-        "1d": 48,
-        "7d": 213,
-        "30d": 1209
+        "1d": 39,
+        "7d": 226,
+        "30d": 1203
       },
       "by_week": [
         {
@@ -145,12 +145,12 @@
         "revenue": 0
       },
       "7d": {
-        "count": 151,
-        "revenue": 487639.77
+        "count": 162,
+        "revenue": 547160.65
       },
       "30d": {
-        "count": 777,
-        "revenue": 2343671.31
+        "count": 784,
+        "revenue": 2364880.05
       }
     },
     "ga4": {
