@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-20T11:05:59Z",
-  "ga4_updated": "Sep 20, 2026",
+  "updated": "2026-09-21T12:16:41Z",
+  "ga4_updated": "Aug 24, 2026",
   "sql_updated": "2026-08-28T10:09:16Z",
   "sql_stale": true,
   "metrics": {
@@ -93,14 +93,18 @@
       }
     },
     "contacts": {
-      "latest_week": 202,
-      "prev_week": 236,
+      "latest_week": 258,
+      "prev_week": 202,
       "by_period": {
-        "1d": 61,
-        "7d": 257,
-        "30d": 1177
+        "1d": 65,
+        "7d": 272,
+        "30d": 1172
       },
       "by_week": [
+        {
+          "week": "2026-09-14",
+          "count": 258
+        },
         {
           "week": "2026-09-07",
           "count": 202
@@ -132,10 +136,6 @@
         {
           "week": "2026-07-20",
           "count": 230
-        },
-        {
-          "week": "2026-07-13",
-          "count": 311
         }
       ]
     },
@@ -145,80 +145,68 @@
         "revenue": 0
       },
       "7d": {
-        "count": 134,
-        "revenue": 417021.13
+        "count": 133,
+        "revenue": 434544.39
       },
       "30d": {
-        "count": 759,
-        "revenue": 2410092.8
+        "count": 748,
+        "revenue": 2368632.06
       }
     },
     "ga4": {
-      "sessions": 15235,
-      "conversions": 1431,
-      "gatineau_sessions": 2443,
-      "ai_traffic": 9007
+      "sessions": 37802,
+      "conversions": 2645,
+      "gatineau_sessions": 3986,
+      "ai_traffic": 32
     },
     "ga4_channels": [
       {
-        "name": "AI Assistant",
-        "val": 9007
-      },
-      {
-        "name": "AI Assistant",
-        "val": 1747
+        "name": "Paid Social",
+        "val": 25585
       },
       {
         "name": "Direct",
-        "val": 1654
+        "val": 3693
+      },
+      {
+        "name": "Paid Search",
+        "val": 2757
       },
       {
         "name": "Organic Search",
-        "val": 789
+        "val": 1452
       },
       {
         "name": "Referral",
-        "val": 640
+        "val": 1328
       },
       {
         "name": "Cross-network",
-        "val": 463
-      },
-      {
-        "name": "AI Assistant",
-        "val": 392
+        "val": 1118
       },
       {
         "name": "Unassigned",
-        "val": 350
+        "val": 829
       },
       {
-        "name": "Organic Social",
-        "val": 95
-      },
-      {
-        "name": "AI Assistant",
-        "val": 53
+        "name": "Email",
+        "val": 818
       },
       {
         "name": "Organic Shopping",
-        "val": 33
+        "val": 89
       },
       {
-        "name": "Organic Video",
-        "val": 5
+        "name": "Organic Social",
+        "val": 63
       },
       {
-        "name": "AI Assistant",
-        "val": 4
-      },
-      {
-        "name": "AI Assistant",
-        "val": 2
+        "name": "Paid Shopping",
+        "val": 38
       },
       {
         "name": "AI Assistant",
-        "val": 1
+        "val": 32
       }
     ]
   },
