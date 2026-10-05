@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T12:24:17Z",
+  "updated": "2026-10-05T12:09:02Z",
   "ga4_updated": "Oct 5, 2026",
   "sql_updated": "2026-08-28T10:09:16Z",
   "sql_stale": true,
@@ -93,14 +93,18 @@
       }
     },
     "contacts": {
-      "latest_week": 281,
-      "prev_week": 244,
+      "latest_week": 246,
+      "prev_week": 281,
       "by_period": {
-        "1d": 51,
-        "7d": 260,
-        "30d": 1062
+        "1d": 45,
+        "7d": 258,
+        "30d": 1063
       },
       "by_week": [
+        {
+          "week": "2026-09-28",
+          "count": 246
+        },
         {
           "week": "2026-09-21",
           "count": 281
@@ -132,10 +136,6 @@
         {
           "week": "2026-08-03",
           "count": 2819
-        },
-        {
-          "week": "2026-07-27",
-          "count": 278
         }
       ]
     },
@@ -145,12 +145,12 @@
         "revenue": 0
       },
       "7d": {
-        "count": 142,
-        "revenue": 385156.47
+        "count": 145,
+        "revenue": 408075.42
       },
       "30d": {
-        "count": 690,
-        "revenue": 2317683.63
+        "count": 689,
+        "revenue": 2306999.39
       }
     },
     "ga4": {
