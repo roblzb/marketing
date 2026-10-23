@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T12:20:19.327017+00:00",
+  "updated": "2026-10-05T12:09:02Z",
   "ga4_updated": "Oct 22, 2026",
   "sql_updated": "2026-08-28T10:09:16Z",
   "sql_stale": true,
@@ -210,6 +210,5 @@
       }
     ]
   },
-  "sql_note": "SQL Server connector unavailable in this run; prodco/perq/beback/store figures are carried over from sql_updated (2026-08-28).",
-  "note": "Oct 23 2026 refresh: SQL and HubSpot tools did not load; all metrics carried forward from previous data.json."
+  "sql_note": "SQL Server connector unavailable in this run; prodco/perq/beback/store figures are carried over from sql_updated (2026-08-28)."
 }
