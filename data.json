@@ -1,6 +1,6 @@
 {
   "updated": "2026-10-05T12:09:02Z",
-  "ga4_updated": "Oct 31, 2026",
+  "ga4_updated": "Nov 1, 2026",
   "sql_updated": "2026-08-28T10:09:16Z",
   "sql_stale": true,
   "metrics": {
@@ -154,59 +154,59 @@
       }
     },
     "ga4": {
-      "sessions": 14054,
-      "conversions": 1595,
-      "gatineau_sessions": 2295,
-      "ai_traffic": 6339
+      "sessions": 14276,
+      "conversions": 1613,
+      "gatineau_sessions": 2308,
+      "ai_traffic": 6445
     },
     "ga4_channels": [
       {
         "name": "AI Assistant",
-        "val": 6339
+        "val": 6445
       },
       {
         "name": "Direct",
-        "val": 2051
+        "val": 2120
       },
       {
         "name": "AI Assistant",
-        "val": 1850
+        "val": 1854
       },
       {
         "name": "Cross-network",
-        "val": 1505
+        "val": 1553
       },
       {
         "name": "Organic Search",
-        "val": 737
+        "val": 740
       },
       {
         "name": "Referral",
-        "val": 635
+        "val": 620
       },
       {
         "name": "Unassigned",
-        "val": 394
+        "val": 397
       },
       {
         "name": "AI Assistant",
-        "val": 279
+        "val": 285
       },
       {
         "name": "Organic Social",
-        "val": 113
+        "val": 111
       },
       {
         "name": "Organic Shopping",
-        "val": 98
+        "val": 97
       },
       {
         "name": "AI Assistant",
-        "val": 49
+        "val": 51
       },
       {
         "name": "AI Assistant",
-        "val": 3
+        "val": 2
       },
       {
         "name": "AI Assistant",
