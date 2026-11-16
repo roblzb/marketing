@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T11:04:17Z",
+  "updated": "2026-11-16T13:17:58Z",
   "ga4_updated": "Nov 16, 2026",
   "sql_updated": "2026-08-28T10:09:16Z",
   "sql_stale": true,
@@ -93,14 +93,18 @@
       }
     },
     "contacts": {
-      "latest_week": 294,
-      "prev_week": 337,
+      "latest_week": 354,
+      "prev_week": 294,
       "by_period": {
-        "1d": 40,
-        "7d": 334,
-        "30d": 1399
+        "1d": 80,
+        "7d": 365,
+        "30d": 1457
       },
       "by_week": [
+        {
+          "week": "2026-11-09",
+          "count": 354
+        },
         {
           "week": "2026-11-02",
           "count": 294
@@ -132,25 +136,21 @@
         {
           "week": "2026-09-14",
           "count": 241
-        },
-        {
-          "week": "2026-09-07",
-          "count": 199
         }
       ]
     },
     "deals": {
       "1d": {
-        "count": 31,
-        "revenue": 85620.43
+        "count": 40,
+        "revenue": 101159.67
       },
       "7d": {
-        "count": 247,
-        "revenue": 721756.12
+        "count": 242,
+        "revenue": 682120.41
       },
       "30d": {
-        "count": 895,
-        "revenue": 2619945.84
+        "count": 945,
+        "revenue": 2747335.0
       }
     },
     "ga4": {
@@ -214,5 +214,5 @@
       }
     ]
   },
-  "sql_note": "SQL Server connector invalidated in this run; prodco/perq/beback/store figures are carried over from sql_updated (2026-08-28)."
+  "sql_note": "SQL Server connector not loaded in this run; prodco/perq/beback/store figures are carried over from sql_updated (2026-08-28)."
 }
