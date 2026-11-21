@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T11:04:50Z",
+  "updated": "2026-11-21T11:05:03Z",
   "ga4_updated": "Nov 20, 2026",
   "sql_updated": "2026-08-28T10:09:16Z",
   "sql_stale": true,
@@ -96,9 +96,9 @@
       "latest_week": 350,
       "prev_week": 293,
       "by_period": {
-        "1d": 49,
-        "7d": 360,
-        "30d": 1418
+        "1d": 63,
+        "7d": 363,
+        "30d": 1414
       },
       "by_week": [
         {
@@ -141,16 +141,16 @@
     },
     "deals": {
       "1d": {
-        "count": 43,
-        "revenue": 125722.29
+        "count": 54,
+        "revenue": 118329.0
       },
       "7d": {
-        "count": 273,
-        "revenue": 777733.06
+        "count": 286,
+        "revenue": 787023.08
       },
       "30d": {
-        "count": 977,
-        "revenue": 2793376.06
+        "count": 1009,
+        "revenue": 2834832.25
       }
     },
     "ga4": {
